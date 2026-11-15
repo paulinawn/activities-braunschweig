@@ -1,0 +1,41 @@
+name: Wöchentliche Kulturtipps
+
+on:
+  schedule:
+    - cron: "0 4 * * 5"   # jeden Freitag um 05:00 (UTC) = 06:00 Winterzeit / 07:00 Sommerzeit
+  workflow_dispatch:       # manuell starten: Actions → "Wöchentliche Kulturtipps" → Run workflow
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-tipps
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scraper/requirements.txt
+
+      - run: pip install -r scraper/requirements.txt
+
+      - name: Termine abrufen und auswählen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scraper/run.py | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Ergebnis speichern
+        run: |
+          git config user.name "kulturtipps-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/events.json scraper/cache.json
+          git diff --cached --quiet || git commit -m "Kulturtipps aktualisiert ($(date +%F))"
+          git push

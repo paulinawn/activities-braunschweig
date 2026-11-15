@@ -1,0 +1,137 @@
+# Quellen, die jeden Freitag abgerufen werden.
+# Neue Quelle hinzufügen: einfach einen Block kopieren und anpassen.
+#   name:   Anzeigename
+#   url:    Seite mit dem Programm / Spielplan / Terminen
+#   region: Braunschweig | Wolfenbüttel | Wolfsburg | Hannover | Hildesheim | Harz | Magdeburg | Celle | Umgebung
+#   hint:   optional – Hinweis für die KI, was dort typischerweise zu finden ist
+
+# ---------- Braunschweig ----------
+- name: Staatstheater Braunschweig
+  url: https://staatstheater-braunschweig.de/programm/spielplan
+  region: Braunschweig
+  hint: Schauspiel, Musiktheater, Ballett/Tanz, Konzerte des Staatsorchesters
+
+- name: LOT-Theater
+  url: https://www.lot-theater.de/
+  region: Braunschweig
+  hint: Freie Szene, zeitgenössischer Tanz und Performance
+
+- name: Brunsviga Kulturzentrum
+  url: https://www.brunsviga-kulturzentrum.de/programm/
+  region: Braunschweig
+
+- name: Braunschweiger Dom
+  url: https://www.braunschweigerdom.de/
+  region: Braunschweig
+  hint: Domkonzerte, Kirchenmusik
+
+- name: Soli Deo Gloria Musikfestival
+  url: https://www.solideogloria.de/
+  region: Braunschweig
+  hint: Klassik-Festival an besonderen Orten der Region
+
+- name: 3 Landesmuseen Braunschweig (Kalender)
+  url: https://3landesmuseen-braunschweig.de/kalender
+  region: Braunschweig
+  hint: Ausstellungen, Führungen, Vorträge
+
+- name: Kunstverein Braunschweig
+  url: https://www.kunstvereinbraunschweig.de/
+  region: Braunschweig
+
+- name: Internationales Filmfest Braunschweig
+  url: https://filmfest-braunschweig.de/
+  region: Braunschweig
+
+- name: VHS Braunschweig
+  url: https://www.vhs-braunschweig.de/
+  region: Braunschweig
+  hint: Exkursionen, Studienfahrten, Führungen, Kurse für Erwachsene
+
+- name: ADFC Braunschweig (Radtouren)
+  url: https://www.adfc-braunschweig.de/
+  region: Braunschweig
+  hint: Geführte Radtouren, offen für Gäste
+
+- name: Alpenverein Sektion Braunschweig
+  url: https://www.alpenverein-braunschweig.de/
+  region: Braunschweig
+  hint: Wanderungen, Touren, Vorträge
+
+- name: NABU Braunschweig
+  url: https://www.nabu-braunschweig.de/
+  region: Braunschweig
+  hint: Naturkundliche Exkursionen, Vogelstimmen-Wanderungen
+
+# ---------- Wolfenbüttel ----------
+- name: Lessingtheater Wolfenbüttel
+  url: https://www.lessingtheater.de/
+  region: Wolfenbüttel
+
+- name: Veranstaltungskalender Wolfenbüttel
+  url: https://www.wolfenbuettel.de/Stadtleben/Veranstaltungskalender/
+  region: Wolfenbüttel
+
+# ---------- Wolfsburg ----------
+- name: Scharoun Theater Wolfsburg
+  url: https://theater.wolfsburg.de/
+  region: Wolfsburg
+  hint: Gastspiele, darunter internationale Tanzcompagnien
+
+- name: Kunstmuseum Wolfsburg
+  url: https://www.kunstmuseum.de/
+  region: Wolfsburg
+
+# ---------- Hannover ----------
+- name: Staatsoper & Schauspiel Hannover
+  url: https://staatstheater-hannover.de/
+  region: Hannover
+  hint: Staatsballett Hannover, Oper, Schauspiel
+
+- name: Tanztheater International
+  url: https://www.tanztheater-international.de/
+  region: Hannover
+  hint: Internationales Tanzfestival, meist im September
+
+- name: KunstFestSpiele Herrenhausen
+  url: https://kunstfestspiele.de/
+  region: Hannover
+  hint: Festival für Tanz, Musik, Performance, meist im Mai
+
+- name: Hannover Veranstaltungen Bühne
+  url: https://www.hannover.de/Veranstaltungskalender/Bühnen
+  region: Hannover
+
+# ---------- Hildesheim / Celle / Magdeburg ----------
+- name: Theater für Niedersachsen (Hildesheim)
+  url: https://www.tfn-online.de/
+  region: Hildesheim
+
+- name: Schlosstheater Celle
+  url: https://www.schlosstheater-celle.de/
+  region: Celle
+
+- name: Theater Magdeburg (Ballett, Oper)
+  url: https://www.theater-magdeburg.de/
+  region: Magdeburg
+  hint: Ballett Magdeburg, Opernhaus
+
+# ---------- Harz ----------
+- name: Harz Veranstaltungen (Harzinfo)
+  url: https://www.harzinfo.de/veranstaltungen
+  region: Harz
+  hint: Geführte Wanderungen, Festivals, Klostersommer
+
+- name: Harzklub
+  url: https://harzklub.de/
+  region: Harz
+  hint: Wanderverein mit geführten Wanderungen
+
+- name: Kloster Walkenried (Kreuzgangkonzerte)
+  url: https://kloster-walkenried.de/veranstaltungen
+  region: Harz
+
+- name: Gandersheimer Domfestspiele
+  url: https://www.gandersheimer-domfestspiele.de/
+  region: Umgebung
+  hint: Sommer-Freilichttheater

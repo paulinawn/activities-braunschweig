@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kulturtipps Braunschweig</title>
+  <meta name="description" content="Handverlesene Tipps für Tanz, Theater, Musik, Wandern und Ausflüge rund um Braunschweig – jeden Freitag neu.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Jeden Freitag neu ausgewählt</p>
+      <h1>Kulturtipps rund um Braunschweig</h1>
+      <p class="lead">Tanz, Theater, Musik, Wandern und Ausflüge – nur das, was sich wirklich lohnt.</p>
+      <p class="updated" id="updated"></p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="filters" aria-label="Filter">
+      <label class="search">
+        <span class="visually-hidden">Suchen</span>
+        <input id="q" type="search" placeholder="Suchen, z. B. Ballett, Harz, Tango …" autocomplete="off">
+      </label>
+
+      <div class="filter-group">
+        <h2>Monat</h2>
+        <div class="chips" id="f-month"></div>
+      </div>
+      <div class="filter-group">
+        <h2>Thema</h2>
+        <div class="chips" id="f-cat"></div>
+      </div>
+      <div class="filter-group">
+        <h2>Ort</h2>
+        <div class="chips" id="f-region"></div>
+      </div>
+      <div class="toggles">
+        <label class="toggle"><input type="checkbox" id="f-top"> <span>Nur Highlights ★★★★</span></label>
+        <label class="toggle"><input type="checkbox" id="f-new"> <span>Nur neu diese Woche</span></label>
+        <button type="button" class="reset" id="reset">Alle Filter zurücksetzen</button>
+      </div>
+    </section>
+
+    <p class="result-count" id="count" aria-live="polite"></p>
+    <div id="list"></div>
+  </main>
+
+  <footer class="wrap footer">
+    <p>Die Auswahl und die Kurzbeschreibungen erstellt eine KI (Claude) automatisch aus den Webseiten der Veranstalter.
+      Termine und Preise bitte immer auf der verlinkten Seite prüfen. Ticket-Links führen nur zu den Veranstaltern selbst
+      oder zu bekannten Ticketanbietern.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
