@@ -11,11 +11,6 @@
   region: Braunschweig
   hint: Schauspiel, Musiktheater, Ballett/Tanz, Konzerte des Staatsorchesters
 
-- name: LOT-Theater
-  url: https://www.lot-theater.de/
-  region: Braunschweig
-  hint: Freie Szene, zeitgenössischer Tanz und Performance
-
 - name: Brunsviga Kulturzentrum
   url: https://www.brunsviga-kulturzentrum.de/programm/
   region: Braunschweig
@@ -59,17 +54,13 @@
   hint: Wanderungen, Touren, Vorträge
 
 - name: NABU Braunschweig
-  url: https://www.nabu-braunschweig.de/
+  url: https://www.nabu-braunschweig.de/termine/
   region: Braunschweig
   hint: Naturkundliche Exkursionen, Vogelstimmen-Wanderungen
 
 # ---------- Wolfenbüttel ----------
 - name: Lessingtheater Wolfenbüttel
   url: https://www.lessingtheater.de/
-  region: Wolfenbüttel
-
-- name: Veranstaltungskalender Wolfenbüttel
-  url: https://www.wolfenbuettel.de/Stadtleben/Veranstaltungskalender/
   region: Wolfenbüttel
 
 # ---------- Wolfsburg ----------
@@ -87,11 +78,6 @@
   url: https://staatstheater-hannover.de/
   region: Hannover
   hint: Staatsballett Hannover, Oper, Schauspiel
-
-- name: Tanztheater International
-  url: https://www.tanztheater-international.de/
-  region: Hannover
-  hint: Internationales Tanzfestival, meist im September
 
 - name: KunstFestSpiele Herrenhausen
   url: https://kunstfestspiele.de/

@@ -8,7 +8,11 @@ Hildesheim, Magdeburg und den Harz.
 
 ## So funktioniert's
 
-1. Jeden **Freitag früh** startet automatisch eine GitHub Action (`.github/workflows/weekly.yml`).
+> **Aktueller Stand:** Die erste Auswahl wurde einmalig von Hand erstellt (ohne API-Kosten).
+> Der wöchentliche Lauf ist **ausgeschaltet**. Zum Einschalten im Repo unter *Settings → Secrets → Actions*
+> das Secret `ANTHROPIC_API_KEY` anlegen und in `.github/workflows/weekly.yml` die `schedule`-Zeilen wieder einkommentieren.
+
+1. Jeden **Freitag früh** startet automatisch eine GitHub Action (`.github/workflows/weekly.yml`), sobald sie eingeschaltet ist.
 2. Sie ruft die Programmseiten aus [`scraper/sources.yaml`](scraper/sources.yaml) ab und macht zusätzlich
    eine Websuche nach besonderen Terminen (geführte Wanderungen, Festivals, Gastspiele, Kurse …).
 3. Claude wählt daraus nur die lohnenden Termine aus, bewertet sie mit 1–5 Sternen und schreibt eine

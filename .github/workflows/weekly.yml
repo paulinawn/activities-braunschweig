@@ -1,8 +1,10 @@
 name: Wöchentliche Kulturtipps
 
 on:
-  schedule:
-    - cron: "0 4 * * 5"   # jeden Freitag um 05:00 (UTC) = 06:00 Winterzeit / 07:00 Sommerzeit
+  # Wöchentlicher Lauf ist AUSGESCHALTET (kein API-Schlüssel hinterlegt).
+  # Zum Einschalten: Secret ANTHROPIC_API_KEY anlegen und die zwei Zeilen unten wieder einkommentieren.
+  # schedule:
+  #   - cron: "0 4 * * 5"   # jeden Freitag um 05:00 (UTC) = 06:00 Winterzeit / 07:00 Sommerzeit
   workflow_dispatch:       # manuell starten: Actions → "Wöchentliche Kulturtipps" → Run workflow
 
 permissions:

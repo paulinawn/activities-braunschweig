@@ -37,7 +37,8 @@ def fetch_page(url: str, timeout: int = 30) -> Page:
         page.error = str(e)[:200]
         return page
 
-    resp.encoding = resp.encoding or resp.apparent_encoding
+    if not resp.encoding or resp.encoding.lower() == "iso-8859-1":
+        resp.encoding = resp.apparent_encoding  # Server ohne Zeichensatz-Angabe
     base = resp.url
     soup = BeautifulSoup(resp.text, "html.parser")
 

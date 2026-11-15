@@ -65,6 +65,7 @@ function card(ev) {
   const isNew = ev.first_seen && daysAgo(ev.first_seen) <= 7;
   const stars = "★".repeat(ev.relevance) + "☆".repeat(5 - ev.relevance);
   const range = ev.date_end && ev.date_end !== ev.date_start ? ` bis ${fmtDate(ev.date_end)}` : "";
+  const when = ev.running ? `Läuft schon – noch bis ${fmtDate(ev.date_end)}` : fmtDate(ev.date_start) + range;
   const where = [ev.time && `${ev.time} Uhr`, ev.venue, ev.city].filter(Boolean).map(esc).join(" · ");
   const url = safeUrl(ev.url);
   const booking = safeUrl(ev.booking_url);
@@ -81,7 +82,7 @@ function card(ev) {
         ${isNew ? '<span class="badge-new">Neu</span>' : ""}
       </div>
       <h3>${esc(ev.title)}</h3>
-      <p class="where">${esc(fmtDate(ev.date_start))}${esc(range)}${where ? " · " + where : ""}</p>
+      <p class="where">${esc(when)}${where ? " · " + where : ""}</p>
       <p class="summary">${esc(ev.summary)}</p>
       ${ev.why ? `<p class="why"><strong>Warum für euch:</strong> ${esc(ev.why)}</p>` : ""}
       <div class="actions">
@@ -143,7 +144,15 @@ async function init() {
     const res = await fetch(`data/events.json?v=${Date.now()}`);
     const data = await res.json();
     const today = new Date(); today.setHours(0, 0, 0, 0);
-    events = (data.events || []).filter((e) => parseDate(e.date_end || e.date_start) >= today);
+    const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+    events = (data.events || [])
+      .filter((e) => parseDate(e.date_end || e.date_start) >= today)
+      .map((e) => {
+        // Bereits laufende Ausstellungen o. Ä. erscheinen im aktuellen Monat
+        if (parseDate(e.date_start) < today) return { ...e, running: true, date_start: iso(today) };
+        return e;
+      })
+      .sort((a, b) => a.date_start.localeCompare(b.date_start) || b.relevance - a.relevance);
     if (data.updated) {
       const u = new Date(data.updated);
       $("updated").textContent = `Zuletzt aktualisiert: ${u.getDate()}. ${MONTHS[u.getMonth()]} ${u.getFullYear()}`;
